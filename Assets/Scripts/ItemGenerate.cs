@@ -9,11 +9,11 @@ public class ItemGenerate : MonoBehaviour
     public GameObject rock;
     private GameObject[] items;
 
-    private float Xmin = -40.0f;
-    private float Xmax = 20.0f;
+    private float Xmin = -50.0f;
+    private float Xmax = 40.0f;
     private float Zmin = -5.0f;
     private float Zmax = 50.0f;
-    private float generateHeight = 30.0f;
+    private float generateHeight = 40.0f;
     private float startTime = 0.5f;
     private float generateRate = 0.5f;
 
