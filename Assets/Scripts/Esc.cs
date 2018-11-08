@@ -7,6 +7,8 @@ public class Esc : MonoBehaviour
     public Canvas escCanvas;
     public Canvas scoreCanvas;
     public Light sun;
+    public GameObject grandpa;
+    public GameObject grandma;
 
     // Use this for initialization
     void Start()
@@ -27,5 +29,21 @@ public class Esc : MonoBehaviour
     public void ModifyLight(float vol)
     {
         sun.intensity = vol;
+    }
+
+    public void ChangePeople(int idx)
+    {
+        if (idx == 0)
+        {
+            grandpa.SetActive(true);
+            grandma.SetActive(false);
+			grandpa.transform.position = grandma.transform.position;
+        }
+        else
+        {
+            grandma.SetActive(true);
+            grandpa.SetActive(false);
+			grandma.transform.position = grandpa.transform.position;
+        }
     }
 }
