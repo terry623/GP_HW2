@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Rock : MonoBehaviour
 {
+    public UI manager;
+
     // Use this for initialization
     void Start()
     {
@@ -18,5 +20,7 @@ public class Rock : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "ground") Destroy(this.gameObject);
+        else if (other.gameObject.tag == "player") manager.LoadGameScene();
+
     }
 }

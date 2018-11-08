@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    public float velocity = 0.2f;
+    public float velocity = 0.1f;
 
     // Use this for initialization
     void Start()

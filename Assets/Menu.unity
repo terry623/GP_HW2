@@ -715,7 +715,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 1.1
   m_Text: "\u5403\u8611\u83C7 - \u52A0\u5206\n\u78B0\u6876\u5B50 - \u6263\u5206\n\u649E\u77F3\u982D
     - Bye Bye"
 --- !u!222 &1570068496

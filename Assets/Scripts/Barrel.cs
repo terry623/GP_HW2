@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Barrel : MonoBehaviour
 {
+    public UI manager;
+
     // Use this for initialization
     void Start()
     {
@@ -17,6 +19,14 @@ public class Barrel : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "ground") Destroy(this.gameObject);
+        if (other.gameObject.tag == "ground")
+        {
+            Destroy(this.gameObject);
+        }
+        else if (other.gameObject.tag == "player")
+        {
+            manager.addScore(false);
+            Destroy(this.gameObject);
+        }
     }
 }

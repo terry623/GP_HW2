@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Mushroom : MonoBehaviour
 {
+    public UI manager;
+
     // Use this for initialization
     void Start()
     {
@@ -17,6 +19,11 @@ public class Mushroom : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "player") Destroy(this.gameObject);
+        if (other.gameObject.tag == "ground") Destroy(this.gameObject);
+        else if (other.gameObject.tag == "player")
+        {
+            manager.addScore(true);
+            Destroy(this.gameObject);
+        }
     }
 }
