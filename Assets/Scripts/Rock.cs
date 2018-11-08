@@ -18,7 +18,7 @@ public class Rock : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "ground") Destroy(this.gameObject);
+        if (other.gameObject.tag == "ground")  Destroy(this.gameObject, 1);
         else if (other.gameObject.tag == "player") manager.LoadGameScene();
     }
 }

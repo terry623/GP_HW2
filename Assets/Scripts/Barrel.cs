@@ -6,6 +6,7 @@ public class Barrel : MonoBehaviour
 {
     public UI manager;
     public AudioSource _audioSource;
+    public Object ExplosionEffect;
 
     // Use this for initialization
     void Start()
@@ -21,12 +22,16 @@ public class Barrel : MonoBehaviour
     {
         if (other.gameObject.tag == "ground")
         {
-            Destroy(this.gameObject);
+             Destroy(this.gameObject, 1);
         }
         else if (other.gameObject.tag == "player")
         {
             manager.addScore(false);
             _audioSource.Play();
+
+            GameObject exp = GameObject.Instantiate(ExplosionEffect, Vector3.zero, Quaternion.identity) as GameObject;
+            exp.transform.position = gameObject.transform.position;
+
             Destroy(this.gameObject);
         }
     }

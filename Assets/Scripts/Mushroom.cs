@@ -6,6 +6,7 @@ public class Mushroom : MonoBehaviour
 {
     public UI manager;
     public AudioSource _audioSource;
+    public Object ExplosionEffect;
 
     // Use this for initialization
     void Start()
@@ -19,11 +20,15 @@ public class Mushroom : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "ground") Destroy(this.gameObject);
+        if (other.gameObject.tag == "ground") Destroy(this.gameObject, 1);
         else if (other.gameObject.tag == "player")
         {
             manager.addScore(true);
             _audioSource.Play();
+
+            GameObject exp = GameObject.Instantiate(ExplosionEffect, Vector3.zero, Quaternion.identity) as GameObject;
+            exp.transform.position = gameObject.transform.position;
+
             Destroy(this.gameObject);
         }
     }
