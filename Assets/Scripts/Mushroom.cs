@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Barrel : MonoBehaviour
+public class Mushroom : MonoBehaviour
 {
     // Use this for initialization
     void Start()
@@ -17,6 +17,6 @@ public class Barrel : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "ground") Destroy(this.gameObject);
+        if (other.gameObject.tag == "player") Destroy(this.gameObject);
     }
 }
