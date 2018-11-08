@@ -5,11 +5,11 @@ using UnityEngine;
 public class Mushroom : MonoBehaviour
 {
     public UI manager;
+    public AudioSource _audioSource;
 
     // Use this for initialization
     void Start()
     {
-
     }
 
     void Update()
@@ -23,6 +23,7 @@ public class Mushroom : MonoBehaviour
         else if (other.gameObject.tag == "player")
         {
             manager.addScore(true);
+            _audioSource.Play();
             Destroy(this.gameObject);
         }
     }

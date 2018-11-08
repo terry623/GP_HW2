@@ -5,11 +5,11 @@ using UnityEngine;
 public class Barrel : MonoBehaviour
 {
     public UI manager;
+    public AudioSource _audioSource;
 
     // Use this for initialization
     void Start()
     {
-
     }
 
     void Update()
@@ -26,6 +26,7 @@ public class Barrel : MonoBehaviour
         else if (other.gameObject.tag == "player")
         {
             manager.addScore(false);
+            _audioSource.Play();
             Destroy(this.gameObject);
         }
     }

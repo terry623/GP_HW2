@@ -9,7 +9,6 @@ public class Rock : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
     }
 
     void Update()
@@ -21,6 +20,5 @@ public class Rock : MonoBehaviour
     {
         if (other.gameObject.tag == "ground") Destroy(this.gameObject);
         else if (other.gameObject.tag == "player") manager.LoadGameScene();
-
     }
 }
